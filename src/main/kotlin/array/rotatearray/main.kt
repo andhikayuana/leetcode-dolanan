@@ -19,15 +19,24 @@ fun main() {
 
 }
 
+//approach 1
 fun rotateArray(nums: IntArray, k: Int): Unit {
+    val l = k % nums.size
     var i = 0
-    var j = nums.size - 1
-    while (i < k) {
+    var tmp = 0
+    var prev = 0
 
-//todo
-
-
+    while (i < l) {
+        prev = nums[nums.size - 1]
+        for (j in nums.indices) {
+            tmp = nums[j]
+            nums[j] = prev
+            prev = tmp
+        }
         i++
-        i--
     }
+
+    println(nums.joinToString(","))
 }
+
+//approach 2
