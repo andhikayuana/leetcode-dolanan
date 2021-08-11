@@ -5,7 +5,7 @@ fun main() {
     val input1 = 10
     val input2 = 0
     val input3 = 1
-    val input4 = 5 * 10 * 10 * 10 * 10 * 10 * 10
+    val input4 = 2
 
     println(countPrimes(input1))
     println(countPrimes(input2))
@@ -14,10 +14,9 @@ fun main() {
 
 }
 
-
 fun countPrimes(n: Int): Int {
     var count = 0
-    for (i in 1..n) {
+    for (i in 1 until n) {
         if (i.isPrime()) {
             count++
         }
@@ -30,10 +29,9 @@ fun Int.isPrime(): Boolean {
     if (this <= 1) {
         return false
     }
-
     var i = 2
     while (i * i <= this) {
-        if (this % i == 0) {
+        if (this % i === 0) {
             return false
         }
         i++
